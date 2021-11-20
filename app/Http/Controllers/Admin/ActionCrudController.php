@@ -71,8 +71,7 @@ class ActionCrudController extends CrudController
 //
 //        ]);
         CRUD::field('content')
-            ->type('ckeditor')
-            ->default('player.getName1() + ", nhập nội dung ở đây" + player.getName2()');
+            ->default('player.getName1() + ", hãy nói yêu " + player.getName2() + "rất nhiều"');
 //        CRUD::field('content')->type('ckeditor');
     }
 

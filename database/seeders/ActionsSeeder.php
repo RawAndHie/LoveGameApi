@@ -21,7 +21,7 @@ class ActionsSeeder extends Seeder
         DB::table('actions')->insert([
             [   'id' => 1,
                 'category_id' => 1,
-                'content' => 'player.getName1() + ",hãy cắn vào tai" + player.getName1()',
+                'content' => 'player.getName1() + ",hãy cắn vào tai" + player.getName2()',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
