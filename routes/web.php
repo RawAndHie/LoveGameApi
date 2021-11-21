@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FindActions;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,7 @@ Route::get('/', function () {
 Route::prefix('api/v1')->group(function () {
     Route::get('/actions',[FindActions::class,'index']);
     Route::get('/actions/{id}', [FindActions::class,'show']);
+
+    Route::get('/categories',[CategoryController::class,'index']);
+
 });
