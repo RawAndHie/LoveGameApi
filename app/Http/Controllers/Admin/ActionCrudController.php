@@ -42,6 +42,7 @@ class ActionCrudController extends CrudController
     protected function setupListOperation()
     {
 
+        CRUD::column('id');
         CRUD::column('category_id')
             ->entity('category')
             ->name('category_id')
@@ -58,6 +59,7 @@ class ActionCrudController extends CrudController
 
     protected function setupCreateOperation()
     {
+        CRUD::field('id');
         CRUD::setValidation(ActionRequest::class);
         CRUD::field('category_id')
             ->label("Category")

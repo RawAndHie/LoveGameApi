@@ -67,6 +67,7 @@ class GenderCrudController extends CrudController
         CRUD::setValidation(GenderRequest::class);
 
 
+        CRUD::field('id');
         CRUD::field('title');
         /**
          * Fields can be defined using the fluent syntax or array syntax:

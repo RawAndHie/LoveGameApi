@@ -66,7 +66,7 @@ class CategoryCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(CategoryRequest::class);
-
+        CRUD::field('id');
         CRUD::field('title');
 
         /**
