@@ -15,7 +15,7 @@ class GenderSeeder extends Seeder
      */
     public function run()
     {
-        \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+//        \Illuminate\Support\Facades\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 
         DB::table('genders')->truncate();
 

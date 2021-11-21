@@ -36,6 +36,6 @@ class ActionsSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ]);
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+//        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
