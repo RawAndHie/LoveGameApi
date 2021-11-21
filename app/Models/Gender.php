@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Action extends Model
+class Gender extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Action extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'actions';
+    protected $table = 'genders';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -34,14 +34,7 @@ class Action extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(Category::class);
-    }
-    public function gender(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(Gender::class);
-    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

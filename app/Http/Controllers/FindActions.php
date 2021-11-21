@@ -17,6 +17,7 @@ class FindActions extends Controller
         return Action::all();
     }
 
+
     /**
      * Show the form for creating a new resource.
      *

@@ -19,12 +19,23 @@ class ActionsSeeder extends Seeder
         \Illuminate\Support\Facades\DB::table('actions')->truncate();
 
         DB::table('actions')->insert([
-            [   'id' => 1,
+            [
+                'id' => 1,
                 'category_id' => 1,
+                'gender_id' => 3,
                 'content' => 'player.getName1() + ",hãy cắn vào tai" + player.getName2()',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-            ]);
+            [
+                'id' => 2,
+                'category_id' => 1,
+                'gender_id' => 3,
+                'content' => 'player.getName1() + ",hãy hôn" + player.getName2(), "trong 15 giây"',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

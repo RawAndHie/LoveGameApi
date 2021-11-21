@@ -46,6 +46,10 @@ class ActionCrudController extends CrudController
             ->entity('category')
             ->name('category_id')
             ->attribute('title');
+        CRUD::column('gender_id')
+            ->entity('gender')
+            ->name('gender_id')
+            ->attribute('title');
         CRUD::column('content');
         CRUD::column('created_at');
         CRUD::column('updated_at');
@@ -59,6 +63,12 @@ class ActionCrudController extends CrudController
             ->label("Category")
             ->entity('category')
             ->name('category_id')
+            ->attribute('title')
+            ->type('select');
+        CRUD::field('gender_id')
+            ->label("Dành cho")
+            ->entity('gender')
+            ->name('gender_id')
             ->attribute('title')
             ->type('select');
 //        $this->crud->addField([
