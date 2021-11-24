@@ -12,9 +12,22 @@ class FindActions extends Controller
      *
      * @return Action[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Action::all();
+        $action = Action::all();
+        $category_id = $request->get('category_id');
+        $gender_id = $request->get('gender_id');
+        if ($category_id != 0 && $gender_id != 0) {
+            $action = $action->where('category_id', '=', $category_id)
+                ->where('gender_id', '=', $gender_id);
+        } elseif ($category_id != 0) {
+            $action = $action->where('category_id', '=', $category_id);
+        } elseif ($gender_id != 0) {
+            $action = $action->where('gender_id', '=', $gender_id);
+        } else {
+            return $action;
+        }
+        return $action;
     }
 
 
@@ -31,7 +44,7 @@ class FindActions extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +55,7 @@ class FindActions extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -53,7 +66,7 @@ class FindActions extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -64,8 +77,8 @@ class FindActions extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -76,7 +89,7 @@ class FindActions extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
