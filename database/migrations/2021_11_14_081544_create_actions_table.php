@@ -18,6 +18,7 @@ class CreateActionsTable extends Migration
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('gender_id')->unsigned();
             $table->string('content');
+            $table->string('content2');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->timestamps();

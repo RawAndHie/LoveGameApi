@@ -52,6 +52,7 @@ class ActionCrudController extends CrudController
             ->name('gender_id')
             ->attribute('title');
         CRUD::column('content');
+        CRUD::column('content2');
         CRUD::column('created_at');
         CRUD::column('updated_at');
 
@@ -83,7 +84,9 @@ class ActionCrudController extends CrudController
 //
 //        ]);
         CRUD::field('content')
-            ->default('player.getName1() + ", hãy nói yêu " + player.getName2() + "rất nhiều"');
+            ->default('"');
+        CRUD::field('content2')
+            ->default('.');
 //        CRUD::field('content')->type('ckeditor');
     }
 
